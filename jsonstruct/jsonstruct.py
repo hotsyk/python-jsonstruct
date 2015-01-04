@@ -15,8 +15,12 @@ class Struct(object):
             elif isinstance(new_data[key], list):
                 new_data[key] = [
                     Struct(**item) if isinstance(item, dict) else item
-                    for item in new_data[key]
-                ]
+                    for item in new_data[key]]
+            elif isinstance(new_data[key], tuple):
+                new_data[key] = tuple(
+                    Struct(**item) if isinstance(item, dict) else item
+                    for item in new_data[key])
+
         self.__dict__.update(new_data)
 
     def __getattr__(self, key):

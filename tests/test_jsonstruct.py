@@ -52,5 +52,20 @@ class TestJsonstruct(unittest.TestCase):
         returned_data = struct.get_data()
         self.assertEqual(returned_data, data)
 
+    def test_create_data_tuple(self):
+        data = {'test': 1, 'test2': ({'t1': 1}, 2)}
+        struct = self.struct(**data)
+        self.assertEqual(struct.test, 1)
+        self.assertEqual(struct.test2[0].t1, 1)
+        self.assertEqual(struct.test2[1], 2)
+
+    def test_create_data_list(self):
+        data = {'test': 1, 'test2': [{'t1': 1}, 2]}
+        struct = self.struct(**data)
+        self.assertEqual(struct.test, 1)
+        self.assertEqual(struct.test2[0].t1, 1)
+        self.assertEqual(struct.test2[1], 2)
+
+
 if __name__ == '__main__':
     unittest.main()
