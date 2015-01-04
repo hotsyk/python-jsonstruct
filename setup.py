@@ -28,15 +28,15 @@ setup(
     author_email='gotsyk@gmail.com',
     url='https://github.com/hotsyk/python-jsonstruct',
     packages=[
-        'python-jsonstruct',
+        'jsonstruct',
     ],
-    package_dir={'python-jsonstruct':
-                 'python-jsonstruct'},
+    package_dir={'jsonstruct':
+                 'jsonstruct'},
     include_package_data=True,
     install_requires=requirements,
     license="BSD",
     zip_safe=False,
-    keywords='python-jsonstruct',
+    keywords='jsonstruct',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
