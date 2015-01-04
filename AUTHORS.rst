@@ -5,7 +5,7 @@ Credits
 Development Lead
 ----------------
 
-* Volodymyr Hotsyk <gotsyk@gmail.com>
+* Volodymyr Hotsyk <http://hotsyk.com>
 
 Contributors
 ------------
