@@ -49,7 +49,7 @@ coverage:
 docs:
 	rm -f docs/python-jsonstruct.rst
 	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ python-jsonstruct
+	sphinx-apidoc -o docs/ jsonstruct
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	open docs/_build/html/index.html
