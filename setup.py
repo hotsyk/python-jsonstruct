@@ -1,28 +1,27 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+import uuid
 
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
 
+from pip.req import parse_requirements
 
 readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
-requirements = [
-    # TODO: put package requirements here
-]
+install_reqs = parse_requirements('requirements.txt', session=uuid.uuid1())
 
-test_requirements = [
-    # TODO: put package test requirements here
-]
+requirements = [str(ir.req) for ir in install_reqs]
+test_requirements = requirements
 
 setup(
     name='python-jsonstruct',
     version='0.1.0',
-    description='Package to work with native python objects created from dict validated with JSONSchema',
+    description=('Package to work with native python objects created '
+                 'from dict validated with JSONSchema'),
     long_description=readme + '\n\n' + history,
     author='Volodymyr Hotsyk',
     author_email='gotsyk@gmail.com',
